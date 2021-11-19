@@ -1,12 +1,23 @@
 <resources>
     <string name="app_name">BraTS-Information</string>
     <string name="action_settings">Settings</string>
+    <string name="menu_item_main">Main</string>
+    <string name="menu_item_gallery">Gallery</string>
+    <string name="menu_item_data">Data</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="general_info_first_paragraph">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pulvinar sem velit, eu lacinia tortor pellentesque mattis. Integer vitae malesuada augue, ac sollicitudin massa. Praesent ut blandit turpis. Donec finibus iaculis metus vel hendrerit. Ut eu rutrum mi. Integer placerat leo id nisl tempus, a elementum augue fermentum. Nullam condimentum vel arcu vel efficitur. Vestibulum sed urna nec erat pellentesque posuere. Phasellus non erat sed purus tristique egestas.
+    </string>
+    <string name="general_info_second_paragraph">
+         Aenean condimentum pretium suscipit. Pellentesque ullamcorper placerat nisi. Nunc tincidunt id nulla id aliquet. Proin commodo mauris bibendum, scelerisque turpis sed, tempus leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis tristique iaculis sapien. Aenean et ullamcorper leo. Donec ut risus massa.
+    </string>
+    <string name="general_info_third_paragraph" translatable="true">
+        Ut at enim in lacus laoreet fermentum vel facilisis nisl. Donec et dui eu est cursus placerat. Duis a augue vitae elit sodales venenatis eget at libero. Sed consectetur tincidunt lorem quis ultrices. Vivamus hendrerit vehicula nunc et sodales. Vestibulum ullamcorper finibus diam, at convallis ante convallis porttitor. Aliquam sed quam interdum, ultricies libero id, dictum arcu. Fusce ac volutpat lectus. Quisque id augue non nunc sagittis tempus. Sed eget orci eu ipsum venenatis tincidunt.
+    </string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>
