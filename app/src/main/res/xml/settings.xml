@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <SwitchPreference
+        android:key="darkMode"
+        android:title="@string/dark_mode_text"
+        android:enabled="true" />
+
+    <ListPreference
+        android:key="list"
+        android:title="@string/choose_language_text"
+        android:entries="@array/app_language"
+        android:entryValues="@array/app_language_values"
+        android:dialogTitle="@string/choose_language_text"
+        android:defaultValue="1" />
+
+</PreferenceScreen>

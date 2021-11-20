@@ -4,6 +4,17 @@
     <string name="menu_item_main">Main</string>
     <string name="menu_item_gallery">Gallery</string>
     <string name="menu_item_data">Data</string>
+    <string-array name="app_language">
+        <item>English</item>
+        <item>Polish</item>
+    </string-array>
+    <string-array name="app_language_values">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string name="dark_mode_text">Dark Mode</string>
+    <string name="choose_language_text">Choose Language</string>
+    <string name="settings_title_text">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
@@ -20,4 +31,6 @@
         Ut at enim in lacus laoreet fermentum vel facilisis nisl. Donec et dui eu est cursus placerat. Duis a augue vitae elit sodales venenatis eget at libero. Sed consectetur tincidunt lorem quis ultrices. Vivamus hendrerit vehicula nunc et sodales. Vestibulum ullamcorper finibus diam, at convallis ante convallis porttitor. Aliquam sed quam interdum, ultricies libero id, dictum arcu. Fusce ac volutpat lectus. Quisque id augue non nunc sagittis tempus. Sed eget orci eu ipsum venenatis tincidunt.
     </string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
