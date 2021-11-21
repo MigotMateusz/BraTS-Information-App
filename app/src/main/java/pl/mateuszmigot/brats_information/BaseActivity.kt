@@ -6,6 +6,7 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.navigation.NavigationView
 import java.util.*
 
 open class BaseActivity : AppCompatActivity() {
@@ -39,7 +40,43 @@ open class BaseActivity : AppCompatActivity() {
         }
     }
 
+    fun setNavigationViewListener() {
+        val navigationView = findViewById<NavigationView>(R.id.nav_view)
+        navigationView.setNavigationItemSelectedListener(NavigationView.OnNavigationItemSelectedListener {
+            when (it.itemId) {
+                R.id.left_side_menu_main_activity -> {
+                    goToMainActivity()
+                }
+                R.id.left_side_menu_gallery_activity -> {
+                    goToGalleryActivity()
+                }
+                R.id.left_side_menu_data_activity -> {
+                    goToDataActivity()
+                }
+            }
+            true
+        })
+    }
 
+    fun goToSettingsActivity() {
+        val intent = Intent(this, SettingsActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun goToMainActivity() {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun goToGalleryActivity() {
+        val intent = Intent(this, GalleryActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun goToDataActivity() {
+        val intent = Intent(this, DataActivity::class.java)
+        startActivity(intent)
+    }
 
     companion object {
         var isLanguageChanged = false

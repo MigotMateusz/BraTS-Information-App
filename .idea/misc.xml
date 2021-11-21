@@ -3,15 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/migot/Desktop/BraTS-Information-App/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2703125" />
+        <entry key="..\:/Users/migot/Desktop/BraTS-Information-App/app/src/main/res/drawable/ic_data.xml" value="0.2703125" />
+        <entry key="..\:/Users/migot/Desktop/BraTS-Information-App/app/src/main/res/drawable/ic_launcher_background.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/migot/Desktop/BraTS-Information-App/app/src/main/res/drawable/left_side_menu_background.xml" value="0.2703125" />
+        <entry key="..\:/Users/migot/Desktop/BraTS-Information-App/app/src/main/res/layout/activity_data.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/migot/Desktop/BraTS-Information-App/app/src/main/res/layout/activity_gallery.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/migot/Desktop/BraTS-Information-App/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/migot/Desktop/BraTS-Information-App/app/src/main/res/layout/activity_settings.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/migot/Desktop/BraTS-Information-App/app/src/main/res/layout/content_main.xml" value="0.2046875" />
         <entry key="..\:/Users/migot/Desktop/BraTS-Information-App/app/src/main/res/layout/fragment_general_info.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/migot/Desktop/BraTS-Information-App/app/src/main/res/layout/fragment_second.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/migot/Desktop/BraTS-Information-App/app/src/main/res/layout/fragment_settings.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/migot/Desktop/BraTS-Information-App/app/src/main/res/layout/left_side_menu_header.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/migot/Desktop/BraTS-Information-App/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.2046875" />
         <entry key="..\:/Users/migot/Desktop/BraTS-Information-App/app/src/main/res/menu/left_side_menu.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/migot/Desktop/BraTS-Information-App/app/src/main/res/menu/menu_main.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/migot/Desktop/BraTS-Information-App/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/migot/Desktop/BraTS-Information-App/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/migot/Desktop/BraTS-Information-App/app/src/main/res/xml/settings.xml" value="0.25625" />
       </map>
     </option>

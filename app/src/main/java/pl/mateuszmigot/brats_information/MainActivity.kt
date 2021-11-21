@@ -11,7 +11,6 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import pl.mateuszmigot.brats_information.databinding.ActivityMainBinding
 
@@ -31,13 +30,13 @@ class MainActivity : BaseActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
 
         val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_main) as NavHostFragment
+                supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_main) as NavHostFragment
         val navController1 = navHostFragment.navController
         findViewById<NavigationView>(R.id.nav_view).setupWithNavController(navController1)
 
         appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
-
+        setNavigationViewListener()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -59,11 +58,6 @@ class MainActivity : BaseActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
-    }
-
-    private fun goToSettingsActivity() {
-        val intent = Intent(this, SettingsActivity::class.java)
-        startActivity(intent)
     }
 
 }
