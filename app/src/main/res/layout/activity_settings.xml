@@ -27,6 +27,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/settings_fragment_frame_layout"
         app:navigationIcon="@drawable/ic_arrow_back"
+        app:title="@string/settings_title_text"
+        app:titleTextColor="@color/white"
         app:popupTheme="@style/Theme.BraTSInformation.PopupOverlay" />
 
     <FrameLayout
