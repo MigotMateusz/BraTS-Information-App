@@ -6,30 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".SettingsActivity">
 
-    <!--<com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/settingToolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        app:navigationIcon="@drawable/ic_arrow_back"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/settings_fragment_frame_layout"
-        app:title="@string/settings_title_text"/> -->
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/settings_fragment_frame_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/ic_arrow_back"
+        app:popupTheme="@style/Theme.BraTSInformation.PopupOverlay"
         app:title="@string/settings_title_text"
-        app:titleTextColor="@color/white"
-        app:popupTheme="@style/Theme.BraTSInformation.PopupOverlay" />
+        app:titleTextColor="@color/white" />
 
     <FrameLayout
         android:id="@+id/settings_fragment_frame_layout"

@@ -1,17 +1,13 @@
 package pl.mateuszmigot.brats_information
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.navigation.NavigationView
 import pl.mateuszmigot.brats_information.databinding.ActivityMainBinding
 
 class MainActivity : BaseActivity() {
@@ -21,21 +17,8 @@ class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        setSupportActionBar(binding.toolbar)
-        val drawerLayout = findViewById<DrawerLayout>(R.id.main_drawer_layout)
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-
-        val navHostFragment =
-                supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_main) as NavHostFragment
-        val navController1 = navHostFragment.navController
-        findViewById<NavigationView>(R.id.nav_view).setupWithNavController(navController1)
-
-        appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
-        setupActionBarWithNavController(navController, appBarConfiguration)
+        setupBinding()
+        setupToolbarWithNavigationDrawer()
         setNavigationViewListener()
     }
 
@@ -58,6 +41,19 @@ class MainActivity : BaseActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
+    }
+
+    private fun setupBinding() {
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
+    }
+
+    private fun setupToolbarWithNavigationDrawer() {
+        val drawerLayout = findViewById<DrawerLayout>(R.id.main_drawer_layout)
+        val navController = findNavController(R.id.nav_host_fragment_content_main)
+        appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
+        setupActionBarWithNavController(navController, appBarConfiguration)
     }
 
 }

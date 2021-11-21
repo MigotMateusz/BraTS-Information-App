@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.ListPreference
@@ -13,16 +12,14 @@ import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.SwitchPreference
 import java.util.*
 
-
 class SettingsFragment : PreferenceFragmentCompat() {
 
-    private lateinit var darkModeSwitch : SwitchPreference
-    private lateinit var languageListPreference : ListPreference
+    private lateinit var darkModeSwitch: SwitchPreference
+    private lateinit var languageListPreference: ListPreference
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.settings, rootKey)
-        darkModeSwitch = findPreference<SwitchPreference>("darkMode") as SwitchPreference
-        languageListPreference = findPreference<ListPreference>("list") as ListPreference
+        setupPreferenceElements()
         setListPreferenceCheckedItem(languageListPreference)
         handleDarkModeSwitch()
         handleLanguageListPreference()
@@ -31,41 +28,67 @@ class SettingsFragment : PreferenceFragmentCompat() {
     private fun handleDarkModeSwitch() {
         darkModeSwitch.onPreferenceChangeListener =
             Preference.OnPreferenceChangeListener { _, _ ->
-                if (darkModeSwitch.isChecked) {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-                    Toast.makeText(activity, "Dark Mode Off", Toast.LENGTH_SHORT).show()
-                    darkModeSwitch.isChecked = false
-                } else {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-                    Toast.makeText(activity, "Light Mode On", Toast.LENGTH_SHORT).show()
-                    darkModeSwitch.isChecked = true
-                }
+                changeThemeMode(darkModeSwitch)
                 false
             }
+    }
+
+    private fun changeThemeMode(darkModeSwitch: SwitchPreference) {
+        if (darkModeSwitch.isChecked) {
+            changeToLightMode()
+        } else {
+            changeToDarkMode()
+        }
+    }
+
+    private fun changeToLightMode() {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        Toast.makeText(activity, "Dark Mode Off", Toast.LENGTH_SHORT).show()
+        darkModeSwitch.isChecked = false
+    }
+
+    private fun changeToDarkMode() {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        Toast.makeText(activity, "Light Mode On", Toast.LENGTH_SHORT).show()
+        darkModeSwitch.isChecked = true
+    }
+
+    private fun setupPreferenceElements() {
+        darkModeSwitch = findPreference<SwitchPreference>("darkMode") as SwitchPreference
+        languageListPreference = findPreference<ListPreference>("list") as ListPreference
     }
 
     private fun handleLanguageListPreference() {
-
         languageListPreference.onPreferenceChangeListener =
-            Preference.OnPreferenceChangeListener { preference, newValue ->
-                Log.i("SettingFragment", preference.toString())
-                Log.i("SettingFragment", newValue.toString())
-                setLocale(newValue.toString())
+            Preference.OnPreferenceChangeListener { _, newValue ->
+                changeApplicationLanguage(newValue.toString())
                 false
             }
     }
 
-    private fun setLocale(lang: String) {
+    private fun changeApplicationLanguage(lang: String) {
         val myLocale = Locale(lang)
+        updateConfigWithNewLocale(myLocale)
+        saveLocaleInSharedPreferences(myLocale)
+        refreshActivity()
+        changeIsLanguageChangedFlagToTrue()
+    }
+
+    private fun updateConfigWithNewLocale(myLocale: Locale) {
         val displayMetrics = activity?.resources?.displayMetrics
         val config = activity?.resources?.configuration
         config?.setLocale(myLocale)
         activity?.resources?.updateConfiguration(config, displayMetrics)
-        saveLocaleInSharedPreferences(myLocale)
+    }
+
+    private fun changeIsLanguageChangedFlagToTrue() {
+        BaseActivity.isLanguageChanged = true
+    }
+
+    private fun refreshActivity() {
         val intent = Intent(context, SettingsActivity::class.java)
         activity?.finish()
         startActivity(intent)
-        BaseActivity.isLanguageChanged = true
     }
 
     private fun saveLocaleInSharedPreferences(locale: Locale) {
@@ -87,7 +110,8 @@ class SettingsFragment : PreferenceFragmentCompat() {
     }
 
     private fun setListPreferenceCheckedItem(listPreference: ListPreference) {
-        val sharedPreferences = context?.getSharedPreferences("selectedLanguage", Context.MODE_PRIVATE)
+        val sharedPreferences =
+            context?.getSharedPreferences("selectedLanguage", Context.MODE_PRIVATE)
         if (sharedPreferences != null) {
             val locale = BaseActivity.getLocaleFromSharedPreference(sharedPreferences)
             if (locale.language.equals("en")) {

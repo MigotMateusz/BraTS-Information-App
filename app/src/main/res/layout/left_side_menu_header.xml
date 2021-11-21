@@ -11,15 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
-        android:src="@drawable/left_side_menu_background"
-         />
+        android:src="@drawable/left_side_menu_background" />
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingTop="30dp"
         android:scaleType="centerCrop"
-        android:src="@mipmap/ic_brats_foreground"
-        />
+        android:src="@mipmap/ic_brats_foreground" />
 
 </RelativeLayout>
