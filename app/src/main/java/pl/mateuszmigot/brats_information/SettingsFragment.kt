@@ -43,12 +43,14 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
     private fun changeToLightMode() {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        saveDarkModeStateInSharedPreferences(false)
         Toast.makeText(activity, "Dark Mode Off", Toast.LENGTH_SHORT).show()
         darkModeSwitch.isChecked = false
     }
 
     private fun changeToDarkMode() {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        saveDarkModeStateInSharedPreferences(true)
         Toast.makeText(activity, "Light Mode On", Toast.LENGTH_SHORT).show()
         darkModeSwitch.isChecked = true
     }
@@ -56,6 +58,17 @@ class SettingsFragment : PreferenceFragmentCompat() {
     private fun setupPreferenceElements() {
         darkModeSwitch = findPreference<SwitchPreference>("darkMode") as SwitchPreference
         languageListPreference = findPreference<ListPreference>("list") as ListPreference
+        getDarkModeSwitchStateFromSharedPreferences()
+    }
+
+    private fun getDarkModeSwitchStateFromSharedPreferences() {
+        val sharedPreferences = context?.getSharedPreferences("darkMode", Context.MODE_PRIVATE)
+        if (sharedPreferences != null) {
+            val isNightModeOn = sharedPreferences.getBoolean("isDarkModeOn", false)
+            darkModeSwitch.isChecked = isNightModeOn
+        } else {
+            darkModeSwitch.isChecked = false;
+        }
     }
 
     private fun handleLanguageListPreference() {
@@ -95,17 +108,34 @@ class SettingsFragment : PreferenceFragmentCompat() {
         val sharedPreferences =
             context?.getSharedPreferences("selectedLanguage", Context.MODE_PRIVATE)
         if (sharedPreferences != null) {
-            writeNewValueToSharedPreferences(sharedPreferences, locale.language)
+            writeNewValueToLanguageStringInSharedPreferences(sharedPreferences, locale.language)
             Toast.makeText(context, "Language changed", Toast.LENGTH_SHORT).show()
         }
     }
 
-    private fun writeNewValueToSharedPreferences(
+    private fun saveDarkModeStateInSharedPreferences(isDarkModeOn: Boolean) {
+        val sharedPreferences =
+            context?.getSharedPreferences("darkMode", Context.MODE_PRIVATE)
+        if (sharedPreferences != null) {
+            writeNewValueToDarkModeStateInSharedPreferences(sharedPreferences, isDarkModeOn)
+        }
+    }
+
+    private fun writeNewValueToLanguageStringInSharedPreferences(
         sharedPreferences: SharedPreferences,
         language: String
     ) {
         val editor = sharedPreferences.edit()
         editor.putString("language", language)
+        editor.apply()
+    }
+
+    private fun writeNewValueToDarkModeStateInSharedPreferences(
+        sharedPreferences: SharedPreferences,
+        state: Boolean
+    ) {
+        val editor = sharedPreferences.edit()
+        editor.putBoolean("isDarkModeOn", state)
         editor.apply()
     }
 
