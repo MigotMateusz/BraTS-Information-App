@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1038760771993",
+    "project_id": "brats-information-app",
+    "storage_bucket": "brats-information-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1038760771993:android:7932b00cd60cfc59c4d308",
+        "android_client_info": {
+          "package_name": "pl.mateuszmigot.brats_information"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1038760771993-cfc2p8u3v7oh8tq92mfv2500tum3lu47.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkAqZ-CKmP9wB-q0ctO0W4_kiDYPBZBI4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1038760771993-cfc2p8u3v7oh8tq92mfv2500tum3lu47.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
