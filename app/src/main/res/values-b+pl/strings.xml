@@ -4,6 +4,8 @@
     <string name="menu_item_main">Główna</string>
     <string name="menu_item_gallery">Galeria</string>
     <string name="menu_item_data">Dane</string>
+    <string name="menu_item_raw_and_seg">Raw and segmented</string>
+    <string name="menu_item_model_and_expert">Model and expert</string>
     <string-array name="app_language">
         <item>Angielski</item>
         <item>Polski</item>

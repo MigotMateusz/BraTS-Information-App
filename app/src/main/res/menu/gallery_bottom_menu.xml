@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/bottom_nav_item_raw_and_seg"
+        android:icon="@drawable/ic_compare"
+        android:title="@string/menu_item_raw_and_seg" />
+    <item
+        android:id="@+id/bottom_nav_item_model_and_expert"
+        android:icon="@drawable/ic_compare_arrows"
+        android:title="@string/menu_item_model_and_expert" />
+</menu>

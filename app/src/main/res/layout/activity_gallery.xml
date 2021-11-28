@@ -10,11 +10,14 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <androidx.coordinatorlayout.widget.CoordinatorLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginBottom="?attr/actionBarSize"
+            android:orientation="vertical">
 
             <com.google.android.material.appbar.AppBarLayout
                 android:layout_width="match_parent"
@@ -30,10 +33,24 @@
 
             </com.google.android.material.appbar.AppBarLayout>
 
-            <include layout="@layout/content_main" />
-            <!-- <include layout="@layout/content_main" /> -->
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/rawSegImageViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:navGraph="@navigation/nav_graph" />
+        </LinearLayout>
 
-        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        <include
+            layout="@layout/content_main"
+            android:visibility="gone" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/gallery_bottom_nav"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_alignParentBottom="true"
+            app:menu="@menu/gallery_bottom_menu" />
+
     </RelativeLayout>
 
     <com.google.android.material.navigation.NavigationView

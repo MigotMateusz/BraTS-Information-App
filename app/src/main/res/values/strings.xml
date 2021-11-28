@@ -4,6 +4,8 @@
     <string name="menu_item_main">Main</string>
     <string name="menu_item_gallery">Gallery</string>
     <string name="menu_item_data">Data</string>
+    <string name="menu_item_raw_and_seg">Compare raw and segmented</string>
+    <string name="menu_item_model_and_expert">Compare model and expert segmentations</string>
     <string-array name="app_language">
         <item>English</item>
         <item>Polish</item>
@@ -30,7 +32,4 @@
     <string name="general_info_third_paragraph" translatable="true">
         Ut at enim in lacus laoreet fermentum vel facilisis nisl. Donec et dui eu est cursus placerat. Duis a augue vitae elit sodales venenatis eget at libero. Sed consectetur tincidunt lorem quis ultrices. Vivamus hendrerit vehicula nunc et sodales. Vestibulum ullamcorper finibus diam, at convallis ante convallis porttitor. Aliquam sed quam interdum, ultricies libero id, dictum arcu. Fusce ac volutpat lectus. Quisque id augue non nunc sagittis tempus. Sed eget orci eu ipsum venenatis tincidunt.
     </string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
