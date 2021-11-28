@@ -1,4 +1,4 @@
-package pl.mateuszmigot.brats_information
+package pl.mateuszmigot.brats_information.fragments
 
 import android.annotation.SuppressLint
 import android.content.res.Configuration
@@ -10,6 +10,7 @@ import android.webkit.WebView
 import androidx.fragment.app.Fragment
 import androidx.webkit.WebSettingsCompat.*
 import androidx.webkit.WebViewFeature
+import pl.mateuszmigot.brats_information.R
 import pl.mateuszmigot.brats_information.databinding.FragmentGeneralInfoBinding
 
 class GeneralInfoFragment : Fragment() {

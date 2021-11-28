@@ -1,4 +1,4 @@
-package pl.mateuszmigot.brats_information
+package pl.mateuszmigot.brats_information.activities
 
 import android.content.Context
 import android.content.Intent
@@ -6,6 +6,7 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.navigation.NavigationView
+import pl.mateuszmigot.brats_information.R
 import java.util.*
 
 open class BaseActivity : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package pl.mateuszmigot.brats_information
+package pl.mateuszmigot.brats_information.activities
 
 import android.os.Bundle
 import android.view.Menu
@@ -8,6 +8,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import pl.mateuszmigot.brats_information.R
 import pl.mateuszmigot.brats_information.databinding.ActivityMainBinding
 
 class MainActivity : BaseActivity() {

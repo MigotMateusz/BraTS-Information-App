@@ -1,8 +1,10 @@
-package pl.mateuszmigot.brats_information
+package pl.mateuszmigot.brats_information.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import pl.mateuszmigot.brats_information.R
+import pl.mateuszmigot.brats_information.fragments.SettingsFragment
 
 class SettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -15,22 +15,22 @@
         android:theme="@style/Theme.BraTSInformation">
 
         <activity
-            android:name=".BaseActivity"
+            android:name=".activities.BaseActivity"
             android:exported="false" />
         <activity
-            android:name=".DataActivity"
+            android:name=".activities.DataActivity"
             android:configChanges="locale|orientation"
             android:exported="false" />
         <activity
-            android:name=".GalleryActivity"
+            android:name=".activities.GalleryActivity"
             android:configChanges="locale|orientation"
             android:exported="false" />
         <activity
-            android:name=".SettingsActivity"
+            android:name=".activities.SettingsActivity"
             android:configChanges="locale|orientation"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:configChanges="locale|orientation"
             android:exported="true"
             android:label="@string/app_name"

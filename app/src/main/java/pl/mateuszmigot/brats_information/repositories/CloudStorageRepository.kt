@@ -1,4 +1,4 @@
-package pl.mateuszmigot.brats_information
+package pl.mateuszmigot.brats_information.repositories
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory

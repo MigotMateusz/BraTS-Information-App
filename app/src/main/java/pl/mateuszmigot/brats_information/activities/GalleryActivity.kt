@@ -1,4 +1,4 @@
-package pl.mateuszmigot.brats_information
+package pl.mateuszmigot.brats_information.activities
 
 import android.graphics.Bitmap
 import android.os.Bundle
@@ -10,6 +10,10 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import pl.mateuszmigot.brats_information.adapters.ModelAndExpertImageViewPagerAdapter
+import pl.mateuszmigot.brats_information.MyApp
+import pl.mateuszmigot.brats_information.R
+import pl.mateuszmigot.brats_information.adapters.RawAndSegmentedImageViewPagerAdapter
 import pl.mateuszmigot.brats_information.databinding.ActivityGalleryBinding
 
 class GalleryActivity : BaseActivity() {

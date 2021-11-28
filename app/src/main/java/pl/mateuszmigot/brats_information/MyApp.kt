@@ -5,6 +5,7 @@ import android.content.Context
 import androidx.appcompat.app.AppCompatDelegate
 import com.google.firebase.FirebaseApp
 import dagger.hilt.android.HiltAndroidApp
+import pl.mateuszmigot.brats_information.repositories.CloudStorageRepository
 
 @HiltAndroidApp
 class MyApp : Application() {

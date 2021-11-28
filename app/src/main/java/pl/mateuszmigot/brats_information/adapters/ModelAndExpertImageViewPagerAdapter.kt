@@ -1,4 +1,4 @@
-package pl.mateuszmigot.brats_information
+package pl.mateuszmigot.brats_information.adapters
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -8,31 +8,35 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.annotation.NonNull
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.viewpager.widget.PagerAdapter
+import pl.mateuszmigot.brats_information.R
 import java.util.*
 
-class RawAndSegmentedImageViewPagerAdapter(context: Context, private var rawImages: List<Bitmap>,
-                                           private var segmentedImages: List<Bitmap>
+class ModelAndExpertImageViewPagerAdapter(
+    context: Context,
+    private var expertImages: List<Bitmap>,
+    private var modelImages: List<Bitmap>
 ) : PagerAdapter() {
 
     private var context: Context = context
-    private var layoutInflater: LayoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+    private var layoutInflater: LayoutInflater =
+        context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
     @NonNull
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
-        val itemView = layoutInflater.inflate(R.layout.raw_segmented_image_view, container, false)
-        val rawImageView = itemView.findViewById(R.id.rawImageView) as ImageView
-        val segmentedImageView = itemView.findViewById(R.id.segmentedImageView) as ImageView
-        rawImageView.setImageBitmap(rawImages[position])
-        segmentedImageView.setImageBitmap(segmentedImages[position])
+        val itemView =
+            layoutInflater.inflate(R.layout.raw_segmented_image_view, container, false)
+        val expertImageView = itemView.findViewById(R.id.rawImageView) as ImageView
+        val modelImageView = itemView.findViewById(R.id.segmentedImageView) as ImageView
+        expertImageView.setImageBitmap(expertImages[position])
+        modelImageView.setImageBitmap(modelImages[position])
         Objects.requireNonNull(container).addView(itemView)
 
         return itemView
     }
 
     override fun getCount(): Int {
-        return rawImages.size
+        return expertImages.size
     }
 
     override fun isViewFromObject(view: View, `object`: Any): Boolean {

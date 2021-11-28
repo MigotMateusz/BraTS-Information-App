@@ -1,4 +1,4 @@
-package pl.mateuszmigot.brats_information
+package pl.mateuszmigot.brats_information.fragments
 
 import android.content.Context
 import android.content.Intent
@@ -10,6 +10,9 @@ import androidx.preference.ListPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.SwitchPreference
+import pl.mateuszmigot.brats_information.R
+import pl.mateuszmigot.brats_information.activities.BaseActivity
+import pl.mateuszmigot.brats_information.activities.SettingsActivity
 import java.util.*
 
 class SettingsFragment : PreferenceFragmentCompat() {
