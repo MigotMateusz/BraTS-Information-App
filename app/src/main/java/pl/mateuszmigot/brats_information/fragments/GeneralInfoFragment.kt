@@ -24,11 +24,12 @@ class GeneralInfoFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
+        var page = "index.html"
+        page = requireArguments().getString("page").orEmpty()
         _binding = FragmentGeneralInfoBinding.inflate(inflater, container, false)
         webView = binding.root.findViewById<WebView>(R.id.WebView)
         setDarkModeWithStrategyForWebView()
-        webView.loadUrl("file:///android_asset/index.html")
+        loadPage(page ?: "index.html")
         return binding.root
     }
 
@@ -41,6 +42,11 @@ class GeneralInfoFragment : Fragment() {
         super.onConfigurationChanged(newConfig)
         resources.configuration.setLocale(newConfig.locales.get(0))
         resources.updateConfiguration(resources.configuration, resources.displayMetrics)
+    }
+
+    fun loadPage(pageName: String) {
+        val lang = resources.configuration.locales.get(0).language
+        webView.loadUrl("file:///android_asset/$lang/$pageName")
     }
 
     private fun setDarkModeWithStrategyForWebView() {

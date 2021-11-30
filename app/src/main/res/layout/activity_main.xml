@@ -30,17 +30,25 @@
 
             </com.google.android.material.appbar.AppBarLayout>
 
-            <include layout="@layout/content_main" />
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fragment_content_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="?attr/actionBarSize"
+                app:defaultNavHost="true"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                app:navGraph="@navigation/nav_graph">
+            </androidx.fragment.app.FragmentContainerView>
 
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_nav"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            app:menu="@menu/bottom_navigation_menu" />
+            app:menu="@menu/general_info_bottom_navigation_menu" />
+
     </RelativeLayout>
 
     <com.google.android.material.navigation.NavigationView

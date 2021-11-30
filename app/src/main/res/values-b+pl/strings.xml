@@ -18,8 +18,9 @@
     <string name="choose_language_text">Wybierz język</string>
     <string name="settings_title_text">Ustawienia</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">Pierwszy Fragment</string>
-    <string name="second_fragment_label">Drugi Fragment</string>
+    <string name="general_info_label">Ogólne informacje</string>
+    <string name="menu_item_results">Rezultat</string>
+    <string name="menu_item_analysis">Analiza</string>
     <string name="next">Następny</string>
     <string name="previous">Poprzedni</string>
 

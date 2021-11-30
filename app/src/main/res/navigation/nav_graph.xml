@@ -8,7 +8,11 @@
     <fragment
         android:id="@+id/FirstFragment"
         android:name="pl.mateuszmigot.brats_information.fragments.GeneralInfoFragment"
-        android:label="@string/first_fragment_label"
+        android:label="@string/general_info_label"
         tools:layout="@layout/fragment_general_info">
+        <argument
+            android:name="page"
+            android:defaultValue="index.html"
+            app:argType="string" />
     </fragment>
 </navigation>

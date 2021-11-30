@@ -40,12 +40,6 @@ class GalleryActivity : BaseActivity() {
         viewPager.adapter = viewPagerAdapter
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-        return navController.navigateUp(appBarConfiguration)
-                || super.onSupportNavigateUp()
-    }
-
     private fun setupBinding() {
         binding = ActivityGalleryBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -54,10 +48,10 @@ class GalleryActivity : BaseActivity() {
 
     private fun setupToolbarWithNavigationDrawer() {
         val drawerLayout = findViewById<DrawerLayout>(R.id.gallery_drawer_layout)
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-        appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        setNavigationViewListener()
+        //val navController = findNavController(R.id.nav_host_fragment_content_main)
+        //appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
+        //setupActionBarWithNavController(navController, appBarConfiguration)
+        //setNavigationViewListener()
     }
 
     private fun prepareBottomNavigation() {

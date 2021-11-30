@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta name="color-scheme" content="dark light">
+        <link rel="stylesheet" href="stylesheet.css">
+    </head>
+    <body>
+        <h1>2. Dane</h1>
+        <p>Dane są udostępniane co roku przez organizatorów konkursu BraTS. Są to obszerne, klinicznie
+            uzyskane w badaniu multiparametrycznym MRI (mpMRI) skany glejaka z patologicznie potwierdzoną
+            diagnozą.
+            Adnotacje danych podregionów guza są stworzone i zaakceptowane przez ekspertów neuroradiologii
+            dla każdego pacjenta w danych treningowych, walidacyjnych i testowych.
+            Dane treningowe są udostępnione wraz z adnotacjami stworzonymi przez ekspertów, natomiast
+            adnotacje dla danych walidacyjnych i testowych pozostają tajne.</p>
+        <p>Wszystkie obrazy skanów mpMRI są w postaci plików NIfTI (.nii.gz). Jest to typ danych specjalny
+            dla obrazów neurologicznych. Obrazy te opisują następujące tryby skanów: </p>
+        <ul>
+            <li>T1(natywny)</li>
+            <li>T1Gd(z kontrastem)</li>
+            <li>T2(natywny)</li>
+            <li>FLAIR(ang. fluid-attenuated inversion recovery, zmodyfikowany T2)</li>
+        </ul>
+        <p>Każdy z tych trybów został uzyskany przy pomocy innego protokołu medycznego oraz za pomocą
+            różnych urządzeń przeprowadzających skany. Segmentacje zostały utworzone przez od 1 do 4
+            oceniających. Adnotacje zawierają klasy: </p>
+        <ul>
+            <li>GD-enhancing tumor(Guz ulegający wzmocnieniu)</li>
+            <li>Peritumoral edematous(Obrzęk okołoguzowy)</li>
+            <li>Necrotic tumor core(Martwiczy rdzeń guza)</li>
+        </ul>
+    </body>
+</html>

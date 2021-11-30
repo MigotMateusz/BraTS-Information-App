@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <meta name="color-scheme" content="dark light">
+        <link rel="stylesheet" href="stylesheet.css">
+    </head>
+    <body>
+        <h1>3. Wyniki pracy</h1>
+        <p>W ramach projektu inżynierskiego wytrenowano model nnUNet 2d na danych treningowych składających
+            się z 1251 pacjentów.
+            Skorzystano również z gotowych modeli nnUNet 3d full resolution oraz nnUNet 3d full resolution
+            with data augmentation. 4 modele w użyciu jest model yixnimpl-20</p>
+        <p>Wszystkie 4 modele wykorzystano do stworzenia różnych komitetów z wykorzystaniem głosowania
+            miękkiego i twardego.</p>
+        <div>
+            <h2>3.1. Komitety klasyfikacyjne</h2>
+            <p>Komitety klasyfikujące to bardzo prosta metoda na uzyskanie lepszego modelu poprzez
+                połączenie prognoz wyliczanych przez poszczególne modele i wybranie klasy, która uzyskała
+                najwięcej głosów. Często taki klasyfikator osiąga większą dokładność od najlepszego
+                klasyfikatora w zespole.
+                Taka metoda najlepiej sprawdza się, gdy klasyfikatory są od siebie w jak największym stopniu
+                od siebie uniezależnione.</p>
+            <p>Klasyfikatory głosujące mogą w 2 sposby uzyskiwać końcowy wynik. Poprzez głosowanie
+                większościowe, gdzie zliczana jest po prostu liczba głosów, lub
+                poprzez głosowanie miękkie, gdzie uśredniane są prawdopodobieństwa przynależności do klasy i
+                wybranie klasy o największym prawdopodobieństwie.</p>
+            <h2>3.2. Wypracowane rozwiązanie</h2>
+            <p>Utworzono komitety z głosowaniem większościowym i głosowaniem miękkim w różnych
+                konfiguracjach oraz przeprowadzono ewaluację tych modeli w celu porównania i wybrania
+                najlepszego modelu. Modele następnie zostaną poddane dalszej analizie oraz zostaną
+                wyciągniete wnioski z zebranych danych</p>
+        </div>
+    </body>
+</html>

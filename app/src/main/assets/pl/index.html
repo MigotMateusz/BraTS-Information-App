@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <meta name="color-scheme" content="dark light">
+        <link rel="stylesheet" href="stylesheet.css">
+    </head>
+    <body>
+        <h1>1. Analiza tematu</h1>
+        <div>
+            <h2>1.1. Definicja problemu</h2>
+            <p>Obrazowanie biomedyczne jest niezbędnym elementem w opiece medycznej i jest rozwijane w
+                niesamowitym tempie dzięki m. in. uczeniu głębokiemu.
+                Algorytmy segmentacji semantycznej pozwalają na analizę obrazów oraz pewną automatyzację
+                wielu aplikacji. Jednak zaprojektowanie tak wyspecjalizowanych rozwiązań
+                nie jest rzeczą trywialną i jest ściśle zależne z właściwościami zestawu danych oraz
+                konfiguracji sprzętu.</p>
+            <p>Segmentacja semantyczna przekształca surowe zdjęcia biomedyczne w znaczące, ustrukturyzowane
+                informacje przez co może pełnić ważną rolę w odkryciach naukowych jak również w codziennie
+                stawianych diagnozach. </p>
+            <h2>1.2. Analiza dostępnych rozwiązań</h2>
+            <p>Z roku na rok przybywa coraz więcej gotowych rozwiązań segmentacji MRI głowy w celu wykrycia
+                guza mózgu.
+                Głównie dzięki corocznemu konkursowi na międzynarodową skalę o nazwie BraTS(Brain Tumor
+                Segmentation challenge).
+                Podczas tego konkursu zespoły mają za zadanie zaprojektować i wytrenować swoje modele, a
+                najlepsze zespoły zostają nagrodzone nagrodami.
+                Z roku na rok modele zgłasza do tego konkursu są coraz bardziej dokładne, co też może
+                zachęcać
+                medyków do coraz częstszego używania metod opartych na sztucznej inteligencji.
+            </p>
+            <p> Do najpopularniejszych rozwiązań należą między innymi: </p>
+            <ul>
+                <li>nnU-Net</li>
+                <li>DeepMedic</li>
+                <li>MedicalZoo</li>
+                <li>SegAN</li>
+                <li>Segtran</li>
+            </ul>
+            <p>
+                Większość modeli bazuje na architekturze U-Net, która jest znana z tego, że uzyskuje bardzo
+                dobre wyniki w zadaniach z danymi biomedycznymi.
+                Rozwiązanie te najczęściej są udostępnione jako narzędzia przygotowane do własnego
+                wytrenowania oraz testowania.
+                A operacje sprowadzają się do uruchomienia odpowiednich komend ze ścieżkami do danych oraz
+                podania wartości innych(często opcjonalnych) parametrów.</p>
+            <h2>1.3. Opis wybranych modeli</h2>
+            <h3>nnU-Net</h3>
+            <p>Jest to metoda, która jest stworzona, aby radzić sobie z różnorodnością zbioru danych, które
+                występują w tej domenie.
+                Metoda ta automatyzuje również pewne decyzje dotyczące projektowania segmentacyjnego
+                pipeline'u dla danego zbioru danych.
+                Metody można używać na 3 sposoby: </p>
+            <ul>
+                <li>Ustadaryzowanego benchmarku - bez ręcznego ustawiania parametrów badacze mogą porównywać
+                    swoje algorytmy z nnU-Netem na pewnym zestawie danych.
+                </li>
+                <li>Gotowa metoda segmentacji - niedoświadczone osoby mogą w łatwy sposób, bez ręcznych
+                    modyfikacji skorzystać z tego narzędzia do własnego zadania segmentacji
+                </li>
+                <li>Framework - dzięki, któremu w szybki sposób mogą wprowadzić swoje modyfikacje, a potem w
+                    prosty sposób zewaluować rezultaty tych modyfikacji.
+                </li>
+            </ul>
+            <h3>yixinmpl-20</h3>
+            <p>Roziwązanie oparte na nnUNet, udostępnione w postaci obrazu dockerowego. Metodę tą należy
+                używać jako gotową metodą segmentacji, gdzie na wejście podajemy ściężkę z danymi
+                wejściowymi, a algorytm zwraca folder z danymi wyjściowymi. </p>
+            <h3>DeepMedic</h3>
+            <p>Jest to system, który pozwala na wytrenowanie modelu na własnych danych, oraz na
+                przetestowanie wyników.
+                Z systemu można korzystać bez żadnych modyfikacji, jednak jeśli zachodzi taka potrzeba w
+                łatwy sposób można dodać własną implementację części systemu</p>
+        </div>
+    </body>
+</html>

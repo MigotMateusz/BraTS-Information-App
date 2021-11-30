@@ -36,13 +36,8 @@
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/rawSegImageViewPager"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:navGraph="@navigation/nav_graph" />
+                android:layout_height="match_parent"/>
         </LinearLayout>
-
-        <include
-            layout="@layout/content_main"
-            android:visibility="gone" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/gallery_bottom_nav"
