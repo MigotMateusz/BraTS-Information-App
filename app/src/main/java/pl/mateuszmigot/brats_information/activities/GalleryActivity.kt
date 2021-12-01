@@ -48,10 +48,10 @@ class GalleryActivity : BaseActivity() {
 
     private fun setupToolbarWithNavigationDrawer() {
         val drawerLayout = findViewById<DrawerLayout>(R.id.gallery_drawer_layout)
-        //val navController = findNavController(R.id.nav_host_fragment_content_main)
-        //appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
-        //setupActionBarWithNavController(navController, appBarConfiguration)
-        //setNavigationViewListener()
+        val navController = findNavController(R.id.gallery_nav_host)
+        appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
+        setupActionBarWithNavController(navController, appBarConfiguration)
+        setNavigationViewListener()
     }
 
     private fun prepareBottomNavigation() {

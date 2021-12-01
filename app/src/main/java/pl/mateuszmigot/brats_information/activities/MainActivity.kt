@@ -7,6 +7,7 @@ import androidx.core.os.bundleOf
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
+import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -21,6 +22,7 @@ class MainActivity : BaseActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +31,7 @@ class MainActivity : BaseActivity() {
         setNavigationViewListener()
         prepareBottomNavigation()
         if (savedInstanceState == null) {
-            changeWebViewInFragment("index.html")
+            changeWebViewInFragment(R.id.GeneralInfoFragment)
         }
     }
 
@@ -67,7 +69,7 @@ class MainActivity : BaseActivity() {
     private fun setupToolbarWithNavigationDrawer() {
         val drawerLayout = findViewById<DrawerLayout>(R.id.main_drawer_layout)
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragment_content_main) as NavHostFragment
-        val navController = navHostFragment.navController
+        navController = navHostFragment.navController
         appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
     }
@@ -77,16 +79,16 @@ class MainActivity : BaseActivity() {
         bottomNavigationView.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.bottom_nav_item_analysis -> {
-                    changeWebViewInFragment("index.html")
+                    changeWebViewInFragment(R.id.GeneralInfoFragment)
                     true
                 }
 
                 R.id.bottom_nav_item_data -> {
-                    changeWebViewInFragment("data.html")
+                    changeWebViewInFragment(R.id.DataGeneralInfoFragment)
                     true
                 }
                 R.id.bottom_nav_item_results -> {
-                    changeWebViewInFragment("results.html")
+                    changeWebViewInFragment(R.id.ResultsGeneralInfoFragment)
                     true
                 }
                 else -> false
@@ -94,11 +96,12 @@ class MainActivity : BaseActivity() {
         }
     }
 
-    private fun changeWebViewInFragment(page: String) {
-        val bundle = bundleOf("page" to page)
-        supportFragmentManager.commit {
+    private fun changeWebViewInFragment(page: Int) {
+        //val bundle = bundleOf("page" to page)
+        navController.navigate(page)
+        /*supportFragmentManager.commit {
             setReorderingAllowed(true)
             add<GeneralInfoFragment>(R.id.fragment_content_main, args = bundle)
-        }
+        }*/
     }
 }

@@ -3,16 +3,37 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
-
+    app:startDestination="@id/GeneralInfoFragment">
     <fragment
-        android:id="@+id/FirstFragment"
+        android:id="@+id/GeneralInfoFragment"
         android:name="pl.mateuszmigot.brats_information.fragments.GeneralInfoFragment"
         android:label="@string/general_info_label"
         tools:layout="@layout/fragment_general_info">
         <argument
             android:name="page"
             android:defaultValue="index.html"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/DataGeneralInfoFragment"
+        android:name="pl.mateuszmigot.brats_information.fragments.GeneralInfoFragment"
+        android:label="@string/general_info_label"
+        tools:layout="@layout/fragment_general_info">
+        <argument
+            android:name="page"
+            android:defaultValue="data.html"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ResultsGeneralInfoFragment"
+        android:name="pl.mateuszmigot.brats_information.fragments.GeneralInfoFragment"
+        android:label="@string/general_info_label"
+        tools:layout="@layout/fragment_general_info">
+        <argument
+            android:name="page"
+            android:defaultValue="results.html"
             app:argType="string" />
     </fragment>
 </navigation>
