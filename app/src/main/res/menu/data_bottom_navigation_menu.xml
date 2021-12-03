@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/full_ranking_item"
+        android:icon="@drawable/ic_baseline_api_24"
+        android:title="@string/full_ranking_label"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/top_10_ranking_item"
+        android:icon="@drawable/ic_baseline_arrow_circle_up_24"
+        android:title="@string/top10_ranking_label"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/my_models_item"
+        android:icon="@drawable/ic_baseline_work_24"
+        android:title="@string/my_models_ranking_label"
+        app:showAsAction="never" />
+</menu>

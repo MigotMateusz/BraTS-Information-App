@@ -20,6 +20,11 @@
     <!-- Strings used for fragments for navigation -->
     <string name="general_info_label">General Info</string>
     <string name="menu_item_results">Result</string>
+    <string name="ranking_label">Ranking</string>
+    <string name="full_ranking_label">Full Ranking</string>
+    <string name="top10_ranking_label">Top 10</string>
+    <string name="my_models_ranking_label">My models</string>
+
     <string name="menu_item_analysis">Analysis</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
@@ -33,4 +38,6 @@
     <string name="general_info_third_paragraph" translatable="true">
         Ut at enim in lacus laoreet fermentum vel facilisis nisl. Donec et dui eu est cursus placerat. Duis a augue vitae elit sodales venenatis eget at libero. Sed consectetur tincidunt lorem quis ultrices. Vivamus hendrerit vehicula nunc et sodales. Vestibulum ullamcorper finibus diam, at convallis ante convallis porttitor. Aliquam sed quam interdum, ultricies libero id, dictum arcu. Fusce ac volutpat lectus. Quisque id augue non nunc sagittis tempus. Sed eget orci eu ipsum venenatis tincidunt.
     </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

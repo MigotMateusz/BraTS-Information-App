@@ -4,6 +4,8 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.navigation.NavigationView
 import pl.mateuszmigot.brats_information.R
@@ -24,6 +26,22 @@ open class BaseActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         setLanguage()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_settings -> {
+                goToSettingsActivity()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
     fun setNavigationViewListener() {

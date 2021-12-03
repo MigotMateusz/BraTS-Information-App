@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/data_nav_graph"
+    app:startDestination="@id/FullRankingFragment">
+
+    <fragment
+        android:id="@+id/FullRankingFragment"
+        android:name="pl.mateuszmigot.brats_information.fragments.FullRankingFragment"
+        android:label="@string/ranking_label"
+        tools:layout="@layout/fragment_full_ranking">
+    </fragment>
+
+    <fragment
+        android:id="@+id/Top10Fragment"
+        android:name="pl.mateuszmigot.brats_information.fragments.Top10Fragment"
+        android:label="@string/ranking_label"
+        tools:layout="@layout/fragment_top10">
+    </fragment>
+
+    <fragment
+        android:id="@+id/MyModelsFragment"
+        android:name="pl.mateuszmigot.brats_information.fragments.MyModelsFragment"
+        android:label="@string/ranking_label"
+        tools:layout="@layout/fragment_my_models">
+    </fragment>
+
+</navigation>
