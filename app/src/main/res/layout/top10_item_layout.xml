@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:minHeight="?attr/minTouchTargetSize"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/teamCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:animateLayoutChanges="true"
+        app:strokeColor="@color/divider_color_dark_mode"
+        app:strokeWidth="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/name_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceHeadline6" />
+
+            <LinearLayout
+                android:id="@+id/innerCardLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:stretchColumns="*">
+
+                    <TableRow>
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_column="1"
+                            android:padding="3dip"
+                            android:textStyle="bold"
+                            android:text="@string/name_text" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_column="2"
+                            android:padding="3dip"
+                            android:textStyle="bold"
+                            android:text="ET" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_column="3"
+                            android:padding="3dip"
+                            android:textStyle="bold"
+                            android:text="WT" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_column="4"
+                            android:padding="3dip"
+                            android:textStyle="bold"
+                            android:text="TC" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_column="1"
+                            android:padding="3dip"
+                            android:text="Dice" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/dice_et_text"
+                            android:layout_column="2"
+                            android:padding="3dip" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/dice_wt_text"
+                            android:layout_column="3"
+                            android:padding="3dip" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/dice_tc_text"
+                            android:layout_column="4"
+                            android:padding="3dip" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_column="1"
+                            android:padding="3dip"
+                            android:text="Sensitivity" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/sensitivity_et_text"
+                            android:layout_column="2"
+                            android:padding="3dip" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/sensitivity_wt_text"
+                            android:layout_column="3"
+                            android:padding="3dip" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/sensitivity_tc_text"
+                            android:layout_column="4"
+                            android:padding="3dip" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_column="1"
+                            android:padding="3dip"
+                            android:text="Specificity" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/specificity_et_text"
+                            android:layout_column="2"
+                            android:padding="3dip" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/specificity_wt_text"
+                            android:layout_column="3"
+                            android:padding="3dip" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/specificity_tc_text"
+                            android:layout_column="4"
+                            android:padding="3dip" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_column="1"
+                            android:padding="3dip"
+                            android:text="Hausdorff 95" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/hausdorff95_et_text"
+                            android:layout_column="2"
+                            android:padding="3dip" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/hausdorff95_wt_text"
+                            android:layout_column="3"
+                            android:padding="3dip" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/hausdorff95_tc_text"
+                            android:layout_column="4"
+                            android:padding="3dip" />
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

@@ -4,12 +4,9 @@ import android.app.Application
 import android.content.Context
 import androidx.appcompat.app.AppCompatDelegate
 import com.google.firebase.FirebaseApp
-import dagger.android.AndroidInjector
-import dagger.android.DaggerApplication
-import dagger.hilt.android.HiltAndroidApp
 import pl.mateuszmigot.brats_information.repositories.CloudStorageRepository
+import pl.mateuszmigot.brats_information.repositories.FirestoreRepository
 import pl.mateuszmigot.brats_information.repositories.TeamsViewModel
-import javax.inject.Inject
 
 
 class MyApp : Application() {
@@ -17,11 +14,14 @@ class MyApp : Application() {
 
     lateinit var imageRepository: CloudStorageRepository
     lateinit var teamsViewModel: TeamsViewModel
+    lateinit var firestoreRepository: FirestoreRepository
     override fun onCreate() {
         super.onCreate()
         setupTeamsViewModel()
         FirebaseApp.initializeApp(this)
         setupImageRepository()
+        firestoreRepository = FirestoreRepository()
+        firestoreRepository.getMyModels()
         val sharedPreferences = this.getSharedPreferences("darkMode", Context.MODE_PRIVATE)
         val isNightMode = sharedPreferences.getBoolean("isDarkModeOn", false)
         if (isNightMode) {
@@ -33,6 +33,7 @@ class MyApp : Application() {
     private fun setupTeamsViewModel() {
         teamsViewModel = TeamsViewModel()
         teamsViewModel.loadAllTeams()
+        teamsViewModel.loadTop10Teams()
     }
 
     private fun setupImageRepository() {

@@ -24,6 +24,7 @@
     <string name="full_ranking_label">Full Ranking</string>
     <string name="top10_ranking_label">Top 10</string>
     <string name="my_models_ranking_label">My models</string>
+    <string name="name_text">Name</string>
 
     <string name="menu_item_analysis">Analysis</string>
     <string name="next">Next</string>

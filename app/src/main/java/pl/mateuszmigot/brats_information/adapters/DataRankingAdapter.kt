@@ -40,7 +40,6 @@ class DataRankingAdapter(private val teams: MutableList<Team>) :
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val team = teams[position]
-        Log.i("TeamAdapter", team.name)
         holder.nameTextView.text = team.name
         holder.diceTextView.text =
             "Dice -> ET: ${team.dice_et} WT: ${team.dice_wt} TC: ${team.dice_tc}"
@@ -57,12 +56,6 @@ class DataRankingAdapter(private val teams: MutableList<Team>) :
 
     override fun getItemCount(): Int {
         return teams.size
-    }
-
-    fun setData(teams: List<Team>) {
-        this.teams.clear()
-        this.teams.addAll(teams)
-        notifyDataSetChanged()
     }
 
     private fun expandCard(viewHolder:DataRankingAdapter.ViewHolder) {

@@ -30,6 +30,7 @@
                 android:textAppearance="?attr/textAppearanceHeadline6" />
 
             <LinearLayout
+                android:padding="5dip"
                 android:id="@+id/innerCardLinearLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

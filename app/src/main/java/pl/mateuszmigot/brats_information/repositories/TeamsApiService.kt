@@ -17,6 +17,9 @@ private val retrofit = Retrofit.Builder()
 interface TeamsApiService {
     @GET("ranking")
     fun getAllTeams(): Call<MutableList<Team>>
+
+    @GET("top10")
+    fun getTop10Teams(): Call<MutableList<Team>>
 }
 
 object TeamsApi {
