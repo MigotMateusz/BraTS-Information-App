@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.textview.MaterialTextView
 import pl.mateuszmigot.brats_information.R
 import pl.mateuszmigot.brats_information.activities.DataActivity
 import pl.mateuszmigot.brats_information.adapters.DataRankingAdapter
@@ -21,11 +22,18 @@ class FullRankingFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_full_ranking, container, false)
+        setupTextView(view)
         setupRecyclerView(view)
         return view
     }
 
-    fun setupRecyclerView(view: View) {
+    private fun setupTextView(view: View) {
+        val textView = view.findViewById<MaterialTextView>(R.id.myRankingText)
+        val modelRanking = (activity as DataActivity).modelRanking
+        textView.text = "My model is: ${modelRanking.myRanking} out of ${modelRanking.numberOfTeams}"
+    }
+
+    private fun setupRecyclerView(view: View) {
         recyclerView = view.findViewById<RecyclerView>(R.id.full_ranking_recycler_view)
         dataRankingAdapter = DataRankingAdapter((activity as DataActivity).teams)
         recyclerView.adapter = dataRankingAdapter

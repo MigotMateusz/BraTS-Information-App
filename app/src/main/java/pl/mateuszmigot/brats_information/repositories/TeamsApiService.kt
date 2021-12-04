@@ -1,5 +1,6 @@
 package pl.mateuszmigot.brats_information.repositories
 
+import pl.mateuszmigot.brats_information.models.ModelRanking
 import pl.mateuszmigot.brats_information.models.Team
 import retrofit2.Call
 import retrofit2.Retrofit
@@ -20,6 +21,9 @@ interface TeamsApiService {
 
     @GET("top10")
     fun getTop10Teams(): Call<MutableList<Team>>
+
+    @GET("myranking")
+    fun getMyModelRanking(): Call<ModelRanking>
 }
 
 object TeamsApi {

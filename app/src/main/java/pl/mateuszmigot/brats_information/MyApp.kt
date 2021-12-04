@@ -15,6 +15,7 @@ class MyApp : Application() {
     lateinit var imageRepository: CloudStorageRepository
     lateinit var teamsViewModel: TeamsViewModel
     lateinit var firestoreRepository: FirestoreRepository
+
     override fun onCreate() {
         super.onCreate()
         setupTeamsViewModel()
@@ -34,6 +35,7 @@ class MyApp : Application() {
         teamsViewModel = TeamsViewModel()
         teamsViewModel.loadAllTeams()
         teamsViewModel.loadTop10Teams()
+        teamsViewModel.loadMyModelRanking()
     }
 
     private fun setupImageRepository() {

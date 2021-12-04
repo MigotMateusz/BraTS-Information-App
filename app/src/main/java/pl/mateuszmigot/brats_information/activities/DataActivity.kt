@@ -13,6 +13,7 @@ import pl.mateuszmigot.brats_information.MyApp
 import pl.mateuszmigot.brats_information.R
 import pl.mateuszmigot.brats_information.databinding.ActivityDataBinding
 import pl.mateuszmigot.brats_information.models.Model
+import pl.mateuszmigot.brats_information.models.ModelRanking
 import pl.mateuszmigot.brats_information.models.Team
 
 class DataActivity : BaseActivity() {
@@ -22,6 +23,7 @@ class DataActivity : BaseActivity() {
     lateinit var teams: MutableList<Team>
     lateinit var top10Teams: MutableList<Team>
     lateinit var models: MutableList<Model>
+    lateinit var modelRanking: ModelRanking
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +35,7 @@ class DataActivity : BaseActivity() {
         teams = (application as MyApp).teamsViewModel.teams
         top10Teams = (application as MyApp).teamsViewModel.top10teams
         models = (application as MyApp).firestoreRepository.models
+        modelRanking = (application as MyApp).teamsViewModel.myModelRanking
     }
 
     override fun onSupportNavigateUp(): Boolean {
