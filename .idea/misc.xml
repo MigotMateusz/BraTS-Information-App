@@ -12,6 +12,7 @@
         <entry key="..\:/Users/migot/Desktop/BraTS-Information-App/app/src/main/res/layout/activity_main.xml" value="0.2828282828282828" />
         <entry key="..\:/Users/migot/Desktop/BraTS-Information-App/app/src/main/res/layout/activity_settings.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/migot/Desktop/BraTS-Information-App/app/src/main/res/layout/content_main.xml" value="0.2046875" />
+        <entry key="..\:/Users/migot/Desktop/BraTS-Information-App/app/src/main/res/layout/data_item_layout.xml" value="0.5" />
         <entry key="..\:/Users/migot/Desktop/BraTS-Information-App/app/src/main/res/layout/fragment_full_ranking.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/migot/Desktop/BraTS-Information-App/app/src/main/res/layout/fragment_general_info.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/migot/Desktop/BraTS-Information-App/app/src/main/res/layout/fragment_my_models.xml" value="0.35260416666666666" />
@@ -28,6 +29,7 @@
         <entry key="..\:/Users/migot/Desktop/BraTS-Information-App/app/src/main/res/menu/menu_main.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/migot/Desktop/BraTS-Information-App/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/migot/Desktop/BraTS-Information-App/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/migot/Desktop/BraTS-Information-App/app/src/main/res/xml/network_security_config.xml" value="0.19322916666666667" />
         <entry key="..\:/Users/migot/Desktop/BraTS-Information-App/app/src/main/res/xml/settings.xml" value="0.25625" />
       </map>
     </option>

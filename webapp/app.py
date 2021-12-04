@@ -10,11 +10,11 @@ def index():
 
 @app.route("/ranking")
 def ranking():
-    return jsonify({'usersList': data_repository.getAllTeamsEndpoint()})
+    return jsonify(data_repository.getAllTeamsEndpoint())
 
 @app.route("/top10")
 def top10():
-    return jsonify({'top10List': data_repository.get10BestTeams()})
+    return jsonify(data_repository.get10BestTeams())
 
 @app.route("/myranking")
 def myRanking():

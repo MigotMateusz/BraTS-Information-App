@@ -1,7 +1,10 @@
 package pl.mateuszmigot.brats_information.activities
 
 import android.os.Bundle
+import android.util.Log
+import androidx.activity.viewModels
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
@@ -9,13 +12,20 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import dagger.hilt.android.AndroidEntryPoint
+import pl.mateuszmigot.brats_information.MyApp
 import pl.mateuszmigot.brats_information.R
 import pl.mateuszmigot.brats_information.databinding.ActivityDataBinding
+import pl.mateuszmigot.brats_information.models.Team
+import pl.mateuszmigot.brats_information.repositories.TeamsViewModel
+import javax.inject.Inject
 
 class DataActivity : BaseActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityDataBinding
     private lateinit var navController: NavController
+    lateinit var teams: MutableList<Team>
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +33,8 @@ class DataActivity : BaseActivity() {
         setupToolbarWithNavigationDrawer()
         setNavigationViewListener()
         prepareBottomNavigation()
+        teams = (application as MyApp).teamsViewModel.teams
+        Log.i("DataActivity -> teams", teams.toString())
     }
 
     override fun onSupportNavigateUp(): Boolean {
