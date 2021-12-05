@@ -7,6 +7,8 @@
     <string name="menu_item_raw_and_seg">Porównanie zdjęć i segmentacji</string>
     <string name="menu_item_model_and_expert">Porównanie segmentacji</string>
     <string name="my_model_text1">Mój model jest na</string>
+    <string name="raw_segmented_label">Surowe dane i segmentacja</string>
+    <string name="model_expert_label">Segmentacja z modelu i ekspertów</string>
     <string name="my_model_text2">miejscu z</string>
     <string-array name="app_language">
         <item>Angielski</item>

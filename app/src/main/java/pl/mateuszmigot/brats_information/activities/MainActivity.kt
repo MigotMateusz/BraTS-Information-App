@@ -55,15 +55,18 @@ class MainActivity : BaseActivity() {
         bottomNavigationView.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.bottom_nav_item_analysis -> {
+                    navController.graph.startDestination = R.id.GeneralInfoFragment
                     changeWebViewInFragment(R.id.GeneralInfoFragment)
                     true
                 }
 
                 R.id.bottom_nav_item_data -> {
+                    navController.graph.startDestination = R.id.DataGeneralInfoFragment
                     changeWebViewInFragment(R.id.DataGeneralInfoFragment)
                     true
                 }
                 R.id.bottom_nav_item_results -> {
+                    navController.graph.startDestination = R.id.ResultsGeneralInfoFragment
                     changeWebViewInFragment(R.id.ResultsGeneralInfoFragment)
                     true
                 }

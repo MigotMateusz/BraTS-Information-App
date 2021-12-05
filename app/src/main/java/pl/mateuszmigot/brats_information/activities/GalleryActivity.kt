@@ -2,6 +2,8 @@ package pl.mateuszmigot.brats_information.activities
 
 import android.graphics.Bitmap
 import android.os.Bundle
+import android.view.Gravity
+import android.view.MenuItem
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -26,6 +28,7 @@ class GalleryActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setupBinding()
         setupToolbarWithNavigationDrawer()
+        setNavigationViewListener()
         prepareBottomNavigation()
         rawImagesT1 = (application as MyApp).imageRepository.rawImages_t1
         rawImagesT1c = (application as MyApp).imageRepository.rawImages_t1c
@@ -42,10 +45,18 @@ class GalleryActivity : BaseActivity() {
         viewPager.adapter = viewPagerAdapter
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) {
+            val drawerLayout = findViewById<DrawerLayout>(R.id.gallery_drawer_layout)
+            drawerLayout.openDrawer(Gravity.LEFT)
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
     private fun setupBinding() {
         binding = ActivityGalleryBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setSupportActionBar(binding.galleryToolbar)
+        setSupportActionBar(binding.toolbar)
     }
 
     private fun setupToolbarWithNavigationDrawer() {
@@ -55,7 +66,6 @@ class GalleryActivity : BaseActivity() {
         val navController = navHostFragment.navController
         appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
-        setNavigationViewListener()
     }
 
     private fun prepareBottomNavigation() {

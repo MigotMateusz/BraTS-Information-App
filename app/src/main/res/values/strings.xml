@@ -23,6 +23,8 @@
     <string name="general_info_label">General Info</string>
     <string name="menu_item_results">Result</string>
     <string name="ranking_label">Ranking</string>
+    <string name="raw_segmented_label">Raw data and segmentation</string>
+    <string name="model_expert_label">Segmentation from model and experts</string>
     <string name="full_ranking_label">Full Ranking</string>
     <string name="modality_label">Modality</string>
     <string name="top10_ranking_label">Top 10</string>
