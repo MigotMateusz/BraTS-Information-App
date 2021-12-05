@@ -4,8 +4,10 @@
     <string name="menu_item_main">Główna</string>
     <string name="menu_item_gallery">Galeria</string>
     <string name="menu_item_data">Dane</string>
-    <string name="menu_item_raw_and_seg">Raw and segmented</string>
-    <string name="menu_item_model_and_expert">Model and expert</string>
+    <string name="menu_item_raw_and_seg">Porównanie zdjęć i segmentacji</string>
+    <string name="menu_item_model_and_expert">Porównanie segmentacji</string>
+    <string name="my_model_text1">Mój model jest na</string>
+    <string name="my_model_text2">miejscu z</string>
     <string-array name="app_language">
         <item>Angielski</item>
         <item>Polski</item>
@@ -23,6 +25,7 @@
     <string name="full_ranking_label">Pełny Ranking</string>
     <string name="top10_ranking_label">Top 10</string>
     <string name="name_text">Nazwa</string>
+    <string name="modality_label">Modalność</string>
     <string name="my_models_ranking_label">Moje modele</string>
     <string name="menu_item_results">Rezultat</string>
     <string name="menu_item_analysis">Analiza</string>

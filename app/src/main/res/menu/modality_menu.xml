@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/modality_t1_item"
+        android:title="t1" />
+
+    <item
+        android:id="@+id/modality_t1c_item"
+        android:title="t1c" />
+
+    <item
+        android:id="@+id/modality_t2_item"
+        android:title="t2" />
+
+    <item
+        android:id="@+id/modality_flair_item"
+        android:title="Flair" />
+</menu>

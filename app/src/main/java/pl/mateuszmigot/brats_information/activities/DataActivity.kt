@@ -20,10 +20,6 @@ class DataActivity : BaseActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityDataBinding
     private lateinit var navController: NavController
-    lateinit var teams: MutableList<Team>
-    lateinit var top10Teams: MutableList<Team>
-    lateinit var models: MutableList<Model>
-    lateinit var modelRanking: ModelRanking
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,16 +28,28 @@ class DataActivity : BaseActivity() {
         setupToolbarWithNavigationDrawer()
         setNavigationViewListener()
         prepareBottomNavigation()
-        teams = (application as MyApp).teamsViewModel.teams
-        top10Teams = (application as MyApp).teamsViewModel.top10teams
-        models = (application as MyApp).firestoreRepository.models
-        modelRanking = (application as MyApp).teamsViewModel.myModelRanking
     }
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.fragment_content_data)
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
+    }
+
+    fun getTeams(): MutableList<Team> {
+        return (application as MyApp).teamsViewModel.teams
+    }
+
+    fun getTop10Teams(): MutableList<Team> {
+        return (application as MyApp).teamsViewModel.top10teams
+    }
+
+    fun getModels(): MutableList<Model> {
+        return (application as MyApp).firestoreRepository.models
+    }
+
+    fun getMyModelRanking(): ModelRanking {
+        return (application as MyApp).teamsViewModel.myModelRanking
     }
 
     private fun setupBinding() {

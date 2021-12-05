@@ -4,8 +4,10 @@
     <string name="menu_item_main">Main</string>
     <string name="menu_item_gallery">Gallery</string>
     <string name="menu_item_data">Data</string>
-    <string name="menu_item_raw_and_seg">Compare raw and segmented</string>
-    <string name="menu_item_model_and_expert">Compare model and expert segmentations</string>
+    <string name="menu_item_raw_and_seg">Raw and segmented</string>
+    <string name="menu_item_model_and_expert">Model and expert</string>
+    <string name="my_model_text1">My model is</string>
+    <string name="my_model_text2">out of</string>
     <string-array name="app_language">
         <item>English</item>
         <item>Polish</item>
@@ -22,6 +24,7 @@
     <string name="menu_item_results">Result</string>
     <string name="ranking_label">Ranking</string>
     <string name="full_ranking_label">Full Ranking</string>
+    <string name="modality_label">Modality</string>
     <string name="top10_ranking_label">Top 10</string>
     <string name="my_models_ranking_label">My models</string>
     <string name="name_text">Name</string>

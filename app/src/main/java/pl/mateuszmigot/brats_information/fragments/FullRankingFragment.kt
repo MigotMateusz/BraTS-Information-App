@@ -1,5 +1,6 @@
 package pl.mateuszmigot.brats_information.fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -27,15 +28,18 @@ class FullRankingFragment : Fragment() {
         return view
     }
 
+    @SuppressLint("SetTextI18n")
     private fun setupTextView(view: View) {
         val textView = view.findViewById<MaterialTextView>(R.id.myRankingText)
-        val modelRanking = (activity as DataActivity).modelRanking
-        textView.text = "My model is: ${modelRanking.myRanking} out of ${modelRanking.numberOfTeams}"
+        val modelRanking = (activity as DataActivity).getMyModelRanking()
+        val text1 = getString(R.string.my_model_text1)
+        val text2 = getString(R.string.my_model_text2)
+        textView.text = "$text1: ${modelRanking.myRanking} $text2 ${modelRanking.numberOfTeams}"
     }
 
     private fun setupRecyclerView(view: View) {
-        recyclerView = view.findViewById<RecyclerView>(R.id.full_ranking_recycler_view)
-        dataRankingAdapter = DataRankingAdapter((activity as DataActivity).teams)
+        recyclerView = view.findViewById(R.id.full_ranking_recycler_view)
+        dataRankingAdapter = DataRankingAdapter((activity as DataActivity).getTeams())
         recyclerView.adapter = dataRankingAdapter
         recyclerView.layoutManager = LinearLayoutManager(context)
     }

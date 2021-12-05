@@ -10,21 +10,55 @@ import com.google.firebase.storage.ktx.storage
 
 
 class CloudStorageRepository {
-    var rawImages: MutableList<Bitmap> = mutableListOf<Bitmap>()
-    var segmentedImages: MutableList<Bitmap> = mutableListOf<Bitmap>()
-    var expertImages: MutableList<Bitmap> = mutableListOf<Bitmap>()
+    var rawImages_t1: MutableList<Bitmap> = mutableListOf()
+    var rawImages_t1c: MutableList<Bitmap> = mutableListOf()
+    var rawImages_t2: MutableList<Bitmap> = mutableListOf()
+    var rawImages_flair: MutableList<Bitmap> = mutableListOf()
+    var segmentedImages: MutableList<Bitmap> = mutableListOf()
+    var expertImages: MutableList<Bitmap> = mutableListOf()
 
     private var storage: FirebaseStorage = Firebase.storage
     private var storageRef = storage.reference
-    private var rawImagesStorage = storageRef.child("raw_images")
+    private var rawImagesT1Storage = storageRef.child("raw_images").child("t1")
+    private var rawImagesT1cStorage = storageRef.child("raw_images").child("t1c")
+    private var rawImagesT2Storage = storageRef.child("raw_images").child("t2")
+    private var rawImagesFlairStorage = storageRef.child("raw_images").child("flair")
     private var segmentedImagesStorage = storageRef.child("segmented_images")
     private var expertImagesStorage = storageRef.child("expert_images")
     private val ONE_MEGABYTE: Long = 1024 * 1024;
 
     fun populateRawImages() {
-        rawImagesStorage.listAll()
+        rawImagesT1Storage.listAll()
             .addOnSuccessListener { listResult ->
-                iterateOverListOfImagesAndSaveThemToList(listResult, rawImagesStorage, rawImages)
+                iterateOverListOfImagesAndSaveThemToList(
+                    listResult,
+                    rawImagesT1Storage,
+                    rawImages_t1
+                )
+            }
+        rawImagesT1cStorage.listAll()
+            .addOnSuccessListener { listResult ->
+                iterateOverListOfImagesAndSaveThemToList(
+                    listResult,
+                    rawImagesT1cStorage,
+                    rawImages_t1c
+                )
+            }
+        rawImagesT2Storage.listAll()
+            .addOnSuccessListener { listResult ->
+                iterateOverListOfImagesAndSaveThemToList(
+                    listResult,
+                    rawImagesT2Storage,
+                    rawImages_t2
+                )
+            }
+        rawImagesFlairStorage.listAll()
+            .addOnSuccessListener { listResult ->
+                iterateOverListOfImagesAndSaveThemToList(
+                    listResult,
+                    rawImagesFlairStorage,
+                    rawImages_flair
+                )
             }
     }
 

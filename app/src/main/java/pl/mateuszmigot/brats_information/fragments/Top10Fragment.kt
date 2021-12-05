@@ -30,7 +30,7 @@ class Top10Fragment : Fragment() {
     fun setupRecyclerView(view: View) {
         Log.i("Recycler-view", "Setup in top10")
         recyclerView = view.findViewById(R.id.top10_ranking_recycler_view)
-        top10RankingAdapter = Top10RankingAdapter((activity as DataActivity).top10Teams)
+        top10RankingAdapter = Top10RankingAdapter((activity as DataActivity).getTop10Teams())
         recyclerView.adapter = top10RankingAdapter
         recyclerView.layoutManager = LinearLayoutManager(context)
     }

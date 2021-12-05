@@ -30,7 +30,7 @@ class MyModelsFragment : Fragment() {
     fun setupRecyclerView(view: View) {
         Log.i("Recycler-view", "Setup in My Models")
         recyclerView = view.findViewById(R.id.top10_ranking_recycler_view)
-        myModelsRankingAdapter = MyModelsRankingAdapter((activity as DataActivity).models)
+        myModelsRankingAdapter = MyModelsRankingAdapter((activity as DataActivity).getModels())
         recyclerView.adapter = myModelsRankingAdapter
         recyclerView.layoutManager = LinearLayoutManager(context)
     }
