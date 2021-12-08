@@ -42,3 +42,6 @@ def serializeMyModelNumbers(my, all):
         "myRanking": my,
         "numberOfTeams": all
     }
+
+def myModels():
+    return 

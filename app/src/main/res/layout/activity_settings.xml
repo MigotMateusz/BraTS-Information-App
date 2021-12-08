@@ -6,19 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".activities.SettingsActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBartoolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.BraTSInformation.AppBarOverlay"
         app:layout_constraintBottom_toTopOf="@id/settings_fragment_frame_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:navigationIcon="@drawable/ic_arrow_back"
-        app:popupTheme="@style/Theme.BraTSInformation.PopupOverlay"
-        app:title="@string/settings_title_text"
-        app:titleTextColor="@color/white" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:popupTheme="@style/Theme.BraTSInformation.PopupOverlay"
+            app:title="@string/settings_title_text" />
+
+    </com.google.android.material.appbar.AppBarLayout>
 
     <FrameLayout
         android:id="@+id/settings_fragment_frame_layout"
@@ -27,6 +33,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@id/appBartoolbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
