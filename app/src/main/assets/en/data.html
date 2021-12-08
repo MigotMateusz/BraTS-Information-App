@@ -5,24 +5,25 @@
 </head>
 <body>
 <h1>2. Data</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus sed nisi vel sodales. Vivamus
-    a auctor enim, tincidunt volutpat ipsum. Nam convallis ultrices dui non pretium. Suspendisse
-    suscipit dolor vitae ante venenatis pellentesque. Mauris sit amet malesuada elit, at scelerisque
-    nunc. Praesent sit amet mollis velit, a lobortis urna. Phasellus congue blandit fermentum.
-    Maecenas et purus quis lectus consequat porta. Nullam non laoreet nibh. Etiam auctor nulla ac
-    metus finibus viverra. Praesent at finibus sapien, ac accumsan libero. Vestibulum ante ipsum
-    primis in faucibus orci luctus et ultrices posuere cubilia curae;</p>
-<p>Praesent pulvinar pretium urna, ut hendrerit neque pellentesque ac. Duis sollicitudin ipsum
-    lectus, in blandit orci elementum quis. Phasellus sit amet consequat purus. </p>
+<p>The data is provided each year by organizers of the BraTS competition. They are extensive,
+    clinically obtained multiparameter MRI (mpMRI) scans of glioblastoma with pathologically
+    confirmed diagnosis.
+    Tumor sub-region data annotations are made and approved by neuroradiology experts
+    for each patient in training, validation, and test data.
+    Training data is shared along with annotations created by experts, while
+    annotations for validation and test data remain confidential.</p>
+<p>All mpMRI scans are saved as NIfTI files(.nii.gz). This type of data is special for neurological
+    images. These images consist of 4 modalities:</p>
 <ul>
     <li>T1(native)</li>
     <li>T1Gd(with contrast)</li>
     <li>T2(native)</li>
     <li>FLAIR(fluid-attenuated inversion recovery)</li>
 </ul>
-<p>Każdy z tych trybów został uzyskany przy pomocy innego protokołu medycznego oraz za pomocą
-    różnych urządzeń przeprowadzających skany. Segmentacje zostały utworzone przez od 1 do 4
-    oceniających. Adnotacje zawierają klasy: </p>
+<p>Each of these modalities has been obtained by a different medical protocol and with
+    various scanning devices. The segmentations were created by 1 up to 4
+    evaluators.
+    Annotations include classes:</p>
 <ul>
     <li>GD-enhancing tumor</li>
     <li>Peritumoral edematous</li>

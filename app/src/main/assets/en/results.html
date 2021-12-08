@@ -5,29 +5,26 @@
     </head>
     <body>
         <h1>3. Results</h1>
-        <p>W ramach projektu inżynierskiego wytrenowano model nnUNet 2d na danych treningowych składających
-            się z 1251 pacjentów.
-            Skorzystano również z gotowych modeli nnUNet 3d full resolution oraz nnUNet 3d full resolution
-            with data augmentation. 4 modele w użyciu jest model yixnimpl-20</p>
-        <p>Wszystkie 4 modele wykorzystano do stworzenia różnych komitetów z wykorzystaniem głosowania
-            miękkiego i twardego.</p>
+        <p>As part of the engineering project, the nnUNet 2d model was trained on the training data of 1,251 patients.
+            Trained models like nnUNet 3d full resolution and nnUNet 3d full resolution with data augmentation were also used.
+            Fourth models in use is the yixnimpl-20 model</p>
+        <p>All 4 models where used in creation of diffrent ensembles(soft voting, hard voting).</p>
         <div>
-            <h2>3.1. Komitety klasyfikacyjne</h2>
-            <p>Komitety klasyfikujące to bardzo prosta metoda na uzyskanie lepszego modelu poprzez
-                połączenie prognoz wyliczanych przez poszczególne modele i wybranie klasy, która uzyskała
-                najwięcej głosów. Często taki klasyfikator osiąga większą dokładność od najlepszego
-                klasyfikatora w zespole.
-                Taka metoda najlepiej sprawdza się, gdy klasyfikatory są od siebie w jak największym stopniu
-                od siebie uniezależnione.</p>
-            <p>Klasyfikatory głosujące mogą w 2 sposby uzyskiwać końcowy wynik. Poprzez głosowanie
-                większościowe, gdzie zliczana jest po prostu liczba głosów, lub
-                poprzez głosowanie miękkie, gdzie uśredniane są prawdopodobieństwa przynależności do klasy i
-                wybranie klasy o największym prawdopodobieństwie.</p>
-            <h2>3.2. Wypracowane rozwiązanie</h2>
-            <p>Utworzono komitety z głosowaniem większościowym i głosowaniem miękkim w różnych
-                konfiguracjach oraz przeprowadzono ewaluację tych modeli w celu porównania i wybrania
-                najlepszego modelu. Modele następnie zostaną poddane dalszej analizie oraz zostaną
-                wyciągniete wnioski z zebranych danych</p>
+            <h2>3.1. Classification committees</h2>
+            <p>Classification committees are a very simple method of getting a better model through
+                combining the forecasts computed by individual models and selecting the class that had
+                the most votes. Often, such classifier achieves greater accuracy than the best
+                classifier in the team.
+                This method works best when the classifiers are as independent of each other as they can get. </p>
+            <p>Voting classifiers can obtain the final result in 2 ways. By voting
+                majority, where the number of votes is simply counted, or
+                by soft voting, where the probabilities of belonging to the class are averaged and then
+                class with the highest probability is selected.</p>
+            <h2>3.2. Solution</h2>
+            <p>Committees with majority voting and soft voting have been created in various
+                configurations and an evaluation of these models was carried out for comparison and selection
+                of the best model. The models will then be further analyzed and will remain
+                conclusions drawn from the collected data</p>
         </div>
     </body>
 </html>
