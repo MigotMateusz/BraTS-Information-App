@@ -10,12 +10,12 @@ import com.google.firebase.storage.ktx.storage
 
 
 class CloudStorageRepository {
-    var rawImages_t1: MutableList<Bitmap> = mutableListOf()
-    var rawImages_t1c: MutableList<Bitmap> = mutableListOf()
-    var rawImages_t2: MutableList<Bitmap> = mutableListOf()
-    var rawImages_flair: MutableList<Bitmap> = mutableListOf()
-    var segmentedImages: MutableList<Bitmap> = mutableListOf()
-    var expertImages: MutableList<Bitmap> = mutableListOf()
+    var rawImages_t1: MutableMap<String, Bitmap> = mutableMapOf()
+    var rawImages_t1c: MutableMap<String, Bitmap> = mutableMapOf()
+    var rawImages_t2: MutableMap<String, Bitmap> = mutableMapOf()
+    var rawImages_flair: MutableMap<String, Bitmap> = mutableMapOf()
+    var segmentedImages: MutableMap<String, Bitmap> = mutableMapOf()
+    var expertImages: MutableMap<String, Bitmap> = mutableMapOf()
 
     private var storage: FirebaseStorage = Firebase.storage
     private var storageRef = storage.reference
@@ -87,13 +87,13 @@ class CloudStorageRepository {
     private fun iterateOverListOfImagesAndSaveThemToList(
         listResult: ListResult,
         storageReference: StorageReference,
-        images: MutableList<Bitmap>
+        images: MutableMap<String, Bitmap>
     ) {
         for (item in listResult.items) {
             val photoReference = storageReference.child(item.name)
             photoReference.getBytes(ONE_MEGABYTE).addOnSuccessListener {
                 val bmp = BitmapFactory.decodeByteArray(it, 0, it.size)
-                images.add(bmp)
+                images[item.name] = bmp
             }
         }
     }

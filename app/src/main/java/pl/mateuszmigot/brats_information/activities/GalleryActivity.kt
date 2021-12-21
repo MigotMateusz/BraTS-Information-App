@@ -2,6 +2,7 @@ package pl.mateuszmigot.brats_information.activities
 
 import android.graphics.Bitmap
 import android.os.Bundle
+import android.util.Log
 import android.view.Gravity
 import android.view.MenuItem
 import androidx.drawerlayout.widget.DrawerLayout
@@ -16,12 +17,17 @@ import pl.mateuszmigot.brats_information.R
 import pl.mateuszmigot.brats_information.adapters.ModelAndExpertImageViewPagerAdapter
 import pl.mateuszmigot.brats_information.adapters.RawAndSegmentedImageViewPagerAdapter
 import pl.mateuszmigot.brats_information.databinding.ActivityGalleryBinding
+import androidx.viewpager.widget.ViewPager.OnPageChangeListener
+
+
+
 
 class GalleryActivity : BaseActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityGalleryBinding
     private lateinit var viewPagerAdapter: PagerAdapter
     private lateinit var viewPager: ViewPager
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,10 +45,30 @@ class GalleryActivity : BaseActivity() {
         viewPager = findViewById(R.id.rawSegImageViewPager)
         viewPagerAdapter = RawAndSegmentedImageViewPagerAdapter(
             this.applicationContext,
-            listOf(rawImagesT1, rawImagesT1c, rawImagesT2, rawImagesFlair),
+            rawImagesT1, rawImagesT1c, rawImagesT2, rawImagesFlair,
             segmentedImages
         )
         viewPager.adapter = viewPagerAdapter
+        viewPager.addOnPageChangeListener(object : OnPageChangeListener {
+            override fun onPageScrollStateChanged(state: Int) {
+                Log.i("ViewPager LOG ->> ", viewPager.currentItem.toString())
+                viewPagerPosition = viewPager.currentItem
+            }
+            override fun onPageScrolled(
+                position: Int,
+                positionOffset: Float,
+                positionOffsetPixels: Int
+            ) {
+                Log.i("ViewPager LOG ->> ", viewPager.currentItem.toString())
+                viewPagerPosition = viewPager.currentItem
+            }
+
+            override fun onPageSelected(position: Int) {
+                Log.i("ViewPager LOG ->> ", viewPager.currentItem.toString())
+                viewPagerPosition = viewPager.currentItem
+            }
+        })
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -75,7 +101,7 @@ class GalleryActivity : BaseActivity() {
                 R.id.bottom_nav_item_raw_and_seg -> {
                     viewPagerAdapter = RawAndSegmentedImageViewPagerAdapter(
                         this.applicationContext,
-                        listOf(rawImagesT1, rawImagesT1c, rawImagesT2, rawImagesFlair),
+                        rawImagesT1, rawImagesT1c, rawImagesT2, rawImagesFlair,
                         segmentedImages
                     )
                     viewPager.adapter = viewPagerAdapter
@@ -97,11 +123,12 @@ class GalleryActivity : BaseActivity() {
     }
 
     companion object {
-        lateinit var rawImagesT1: List<Bitmap>
-        lateinit var rawImagesT1c: List<Bitmap>
-        lateinit var rawImagesT2: List<Bitmap>
-        lateinit var rawImagesFlair: List<Bitmap>
-        lateinit var segmentedImages: List<Bitmap>
-        lateinit var expertImages: List<Bitmap>
+        lateinit var rawImagesT1: MutableMap<String, Bitmap>
+        lateinit var rawImagesT1c: MutableMap<String, Bitmap>
+        lateinit var rawImagesT2: MutableMap<String, Bitmap>
+        lateinit var rawImagesFlair: MutableMap<String, Bitmap>
+        lateinit var segmentedImages: MutableMap<String, Bitmap>
+        lateinit var expertImages: MutableMap<String, Bitmap>
+        var viewPagerPosition: Int = 0
     }
 }

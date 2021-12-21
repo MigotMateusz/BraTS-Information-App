@@ -15,8 +15,8 @@ import java.util.*
 
 class ModelAndExpertImageViewPagerAdapter(
     context: Context,
-    private var expertImages: List<Bitmap>,
-    private var modelImages: List<Bitmap>
+    private var expertImages: MutableMap<String, Bitmap>,
+    private var modelImages: MutableMap<String, Bitmap>
 ) : PagerAdapter() {
 
     private var context: Context = context
@@ -31,8 +31,9 @@ class ModelAndExpertImageViewPagerAdapter(
         button.visibility = View.GONE
         val expertImageView = itemView.findViewById(R.id.rawImageView) as ImageView
         val modelImageView = itemView.findViewById(R.id.segmentedImageView) as ImageView
-        expertImageView.setImageBitmap(expertImages[position])
-        modelImageView.setImageBitmap(modelImages[position])
+        val mapKey= "0$position.png"
+        expertImageView.setImageBitmap(expertImages[mapKey])
+        modelImageView.setImageBitmap(modelImages[mapKey])
         Objects.requireNonNull(container).addView(itemView)
 
         return itemView
